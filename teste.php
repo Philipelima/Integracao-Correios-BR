@@ -24,7 +24,3 @@ $dadosConsultaFrete = [
 
 $calculoFrete = (new Correios())->consultarFrete($dadosConsultaFrete);
 
-echo " <pre>"; 
- print_r($calculoFrete);
-  echo "</pre>"; 
- exit;
