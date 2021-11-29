@@ -24,7 +24,10 @@ class Correios
     const ROLO_PRISMA = 2;
     const ENVELOPE = 3;
 
-
+    /**
+    * Url base para a requisição de consulta
+    * @var string
+    */
 
     const WS_URL = "http://ws.correios.com.br/calculador/CalcPrecoPrazo.aspx?";
 
