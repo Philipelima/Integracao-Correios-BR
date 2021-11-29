@@ -62,8 +62,9 @@ class Correios
      * Função publica responsavel pela consulta do frete
      * @param array $dados
      * @param string $retorno
+     * @return SimpleXMLElement object
      */
-    public function consultarFrete(array $dados = [], $retorno = "xml")
+    public function consultarFrete(array $dados = [], $retorno = "xml") :SimpleXMLElement
     {
         $this->setDadosObrigatorios($dados);
         $this->setRetorno($retorno);
@@ -75,7 +76,7 @@ class Correios
      * Função responsavel por realizar a consulta na Url completa
      * @return SimpleXMLElement Object
      */
-    private function consultar()
+    private function consultar() :SimpleXMLElement
     {
         $url = $this->getCompleteUrl();
         $response = $this->curlRequest($url);
@@ -85,12 +86,12 @@ class Correios
 
     /**
      * 
-     * função responsavel por definir as credenciais da empresa, caso ela tenha contrato com os Correios
+     * Função responsavel por definir as credenciais da empresa, caso ela tenha contrato com os Correios
      * @param string $nCdEmpresa 
      * @param string $sDsSenha
      * 
      */
-    private function setCredenciais($nCdEmpresa, $sDsSenha)
+    private function setCredenciais($nCdEmpresa, $sDsSenha) :void
     {
         $this->nCdEmpresa = $nCdEmpresa;
         $this->sDsSenha = $sDsSenha;
@@ -101,7 +102,7 @@ class Correios
      * Configura o tipo de retorno que deve ser dado pela consulta
      * @param string $tipoRetorno (XML ou JSON)
      */
-    private function setRetorno($tipoRetorno)
+    private function setRetorno($tipoRetorno) :void
     {
         $this->retorno = $tipoRetorno;
     }
@@ -111,8 +112,7 @@ class Correios
      * Seta todos os dados que são obrigatorios para que a requisição funcione
      * @param array $dados 
      */
-
-    private function setDadosObrigatorios($dados)
+    private function setDadosObrigatorios($dados) :void
     {
 
         $this->dadosObrigatorios['nCdEmpresa']            =       $this->nCdEmpresa ? $this->nCdEmpresa  :   "";
@@ -137,8 +137,7 @@ class Correios
      * Retorna quais dados são obrigatorios para a Requisição da API dos correios
      * @return array
      */
-
-    private function getDadosObrigatorios()
+    private function getDadosObrigatorios() :array
     {
         return $this->dadosObrigatorios;
     }
@@ -148,7 +147,7 @@ class Correios
      * Formata a url pela qual a Classe executa a requisição a API dos Correios
      * @return string
      */
-    private function getCompleteUrl()
+    private function getCompleteUrl() :string
     {
         $uri    =   self::WS_URL;
         $parametros = $this->getDadosObrigatorios();
@@ -162,7 +161,7 @@ class Correios
      * Executa a requisição na api dos Correios via CURL
      * @return string
      */
-    private function curlRequest($url)
+    private function curlRequest($url) :string
     {
 
         $curl = curl_init();
@@ -187,7 +186,7 @@ class Correios
      * Trata a resposta da requisição de string para Objeto
      * @return object
      */
-    private function responseTratada($response)
+    private function responseTratada($response) :object
     {
         switch ($this->retorno) {
             case 'xml':
