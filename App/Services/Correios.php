@@ -15,6 +15,7 @@ class Correios
     const SEDEX_10 = "04790";
     const SEDEX_HOJE = "04804";
 
+    
     /**
      * 
      * Tipos de Pacotes 
@@ -24,12 +25,14 @@ class Correios
     const ROLO_PRISMA = 2;
     const ENVELOPE = 3;
 
+    
     /**
     * Url base para a requisição de consulta
     * @var string
     */
     const WS_URL = "http://ws.correios.com.br/calculador/CalcPrecoPrazo.aspx?";
 
+    
     /**
      * Credenciais para empresas com contrato
      * @var string
@@ -37,12 +40,14 @@ class Correios
     private $nCdEmpresa;
     private $sDsSenha;
 
+    
     /**
      * Dados enviados via Requisição GET para o WebService dos correios
      * @var array
      */
     private $dadosObrigatorios = [];
 
+    
     /**
      * tipo de retorno da consulta
      * @var string
@@ -57,6 +62,7 @@ class Correios
         }
     }
 
+    
     /**
      * Função publica responsavel pela consulta do frete
      * @param array $dados
@@ -83,6 +89,7 @@ class Correios
         return $this->responseTratada($response)->cServico;
     }
 
+    
     /**
      * 
      * Função responsavel por definir as credenciais da empresa, caso ela tenha contrato com os Correios
