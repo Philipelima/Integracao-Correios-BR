@@ -142,7 +142,7 @@ $dadosConsultaFrete = [
 
   
 //instanciando a classe e consultando o frete e taxas.
-$calculoFrete = (new  Correios())->consultarFrete($dadosConsultaFrete);
+$calculoFrete = (new  Correios)->consultarFrete($dadosConsultaFrete);
 	
 ```
 
