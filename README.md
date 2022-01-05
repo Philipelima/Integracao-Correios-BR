@@ -8,7 +8,7 @@ A classe desenvolvida aqui  pode facilmente ser integrada ao seu código e facil
 https://github.com/Philipelima/Integracao-Correios-BR.git
 ```
 
-A ideia é tornar a consulta mais clara e prática.
+A ideia é tornar a consulta mais clara e fácil de ser executada.
 
 ### Requisitos 
 
