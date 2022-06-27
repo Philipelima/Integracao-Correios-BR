@@ -1,6 +1,6 @@
 # Integração Correios BR
 
-Esse é um exemplo de integração com a API dos Correios
+Esse é um exemplo de integração com a API dos Correios para cálculo de fretes.
 
 A classe desenvolvida aqui  pode facilmente ser integrada ao seu código e facilitar suas consultas de Frete no serviço dos Correios:
 
